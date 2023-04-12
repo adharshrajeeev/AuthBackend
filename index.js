@@ -25,11 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', usersRouter);
 
-mongoose.connect(process.env.DATABASE).then((response)=>{
+mongoose.connect(process.env.DATABASE)
 
-    app.listen(process.env.PORT,()=>console.log(`APP RUNNING IN PORT ${process.env.PORT}`))
-}).catch((err)=>{
-    console.log("error in connections")
-})
+app.listen(process.env.PORT,()=>console.log(`APP RUNNING IN PORT ${process.env.PORT}`))
 
 module.exports = app;

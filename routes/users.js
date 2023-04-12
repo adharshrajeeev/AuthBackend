@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 const { SignUpUser,LoginUser } = require('../controllers/userController');
 
+router.get('/',(req,res)=>{
+    res.send("hello thisis firstpage")
+})
 
 router.get('/api',(req,res)=>{
     res.status(200).json("hey hey welcome")
